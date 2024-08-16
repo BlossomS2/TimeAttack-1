@@ -1,6 +1,4 @@
-import React from "react";
 import React, { useState } from "react";
-import "./App.css";
 
 export const App = () => {
   const [countries, setCountries] = useState([]);
@@ -24,7 +22,6 @@ export const App = () => {
         <label>국가</label>
         <input
           type="text"
-          value={country}
           placeholder="국가 입력"
           onChange={handleInputChange}
         ></input>
@@ -33,27 +30,24 @@ export const App = () => {
         <label>금메달</label>
         <input
           type="text"
-          value={gold}
           placeholder="0"
-          onChange={inputMedal}
+          onChange={(e) => handleMedalChange(e, "gold")}
         ></input>
       </div>
       <div>
         <label>은메달</label>
         <input
           type="text"
-          value={silver}
           placeholder="0"
-          onChange={inputMedal}
+          onChange={(e) => handleMedalChange(e, "silver")}
         ></input>
       </div>
       <div>
         <label>동메달</label>
         <input
           type="text"
-          value={bronze}
           placeholder="0"
-          onChange={inputMedal}
+          onChange={(e) => handleMedalChange(e, "bronze")}
         ></input>
       </div>
       <div>
@@ -84,3 +78,4 @@ export const App = () => {
     </div>
   );
 };
+export default App;
