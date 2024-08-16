@@ -14,7 +14,9 @@ export const App = () => {
   const handleInputChange = (e) => {
     setName(e.target.value);
   };
-
+const handleMedalChange =() =>{
+if()
+}
   return (
     <div>
       <h1>올림픽 메달 트래커</h1>
@@ -60,19 +62,21 @@ export const App = () => {
         <thead>
           <tr>
             <th>국가</th>
-            <tr>금메달</tr>
-            <tr>은메달</tr>
-            <tr>동메달</tr>
+            <th>금메달</th>
+            <th>은메달</th>
+            <th>동메달</th>
+            <th>비고</th>
           </tr>
         </thead>
         <tbody>
-          {countries.map((country) => (
-            <tr key={c.id}>
-              <td>{gold}</td>
-              <td>{silver}</td>
-              <td>{bronze}</td>
-            </tr>
-          ))}
+        {countries.map((item, idx) => (
+      <tr key={idx}>
+				<td>{item.name}</td>
+        <td>{item.gold}</td>
+        <td>{item.silver}</td>
+        <td>{item.bronze}</td>
+      </tr>
+    ))}
         </tbody>
       </table>
     </div>
